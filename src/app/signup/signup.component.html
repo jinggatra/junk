@@ -3,7 +3,7 @@
 </div>
 
 <div class="container">
-  <form [formGroup]="form" method="POST" form-action="">
+  <form [formGroup]="form" method="POST" action="input.php">
     <div class="form-group">
       <label for="nama">Nama Lengkap</label>
       <input
@@ -22,7 +22,8 @@
         formControlName="alamat"
         id="alamat"
         type="text"
-        class="form-control">
+        class="form-control"
+        name="alamat">
         <div *ngIf="alamat.touched && alamat.invalid" class="alert alert-danger">
             Alamat harus diisi
           </div>
@@ -33,7 +34,8 @@
         formControlName="tanggallahir"
         id="tanggallahir"
         type="date"
-        class="form-control">
+        class="form-control"
+        name="tanggallahir">
         <div *ngIf="tanggallahir.touched && tanggallahir.invalid" class="alert alert-danger">
             Tanggal lahir harus diisi
           </div>
@@ -58,7 +60,8 @@
         formControlName="nohp"
         id="nohp"
         type="text"
-        class="form-control">
+        class="form-control"
+        name="nohp">
         <div *ngIf="nohp.touched && nohp.invalid" class="alert alert-danger">
             No. Telp harus diisi</div>
         <div *ngIf="nohp.errors.cannotContainChara" class="alert alert-danger">
@@ -66,29 +69,31 @@
         </div>
     </div>
     <div class="form-group">
-      <label for="username">Asal Sekolah</label>
+      <label for="asal_sekolah">Asal Sekolah</label>
       <input
         formControlName="username"
-        id="username"
+        id="asal_sekolah"
         type="text"
-        class="form-control">
+        class="form-control"
+        name="asal_sekolah">
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
             Asal Sekolah harus diisi
           </div>
     </div>
 
     <div class="form-group">
-      <label for="password">Jenis Lomba</label>
+      <label for="jenis_lomba">Jenis Lomba</label>
       <input
         formControlName="password"
-        id="password"
-        type="password"
-        class="form-control">
+        id="jenis_lomba"
+        type="text"
+        class="form-control"
+        name="jenis_lomba">
         <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
-            Password harus diisi
+            Jenis Lomba harus diisi
           </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit" name="tambah">Submit</button>
   </form>
 </div>

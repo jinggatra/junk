@@ -4,6 +4,9 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
+import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { appRoutes } from './routerConfig';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { SignupComponent } from './signup/signup.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
