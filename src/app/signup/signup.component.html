@@ -1,16 +1,17 @@
 <div class="container">
-  <h1 align="center">Ujian Tengah Semester</h1>
+  <h1 align="center">Form Pendaftaran Lomba</h1>
 </div>
 
 <div class="container">
   <form [formGroup]="form">
     <div class="form-group">
-      <label for="nama">Nama</label>
+      <label for="nama">Nama Lengkap</label>
       <input
         formControlName="nama"
         id="nama"
         type="text"
-        class="form-control">
+        class="form-control"
+        name="nama">
         <div *ngIf="nama.touched && nama.invalid" class="alert alert-danger">
           Nama harus diisi
         </div>
@@ -42,9 +43,9 @@
     <div class="form-group">
         <label for="jeniskelamin">Jenis Kelamin</label><br>
         <select>
-            <option value="">--</option>
-            <option value="L">Laki-Laki</option>
-            <option value="P">Perempuan</option>
+            <option value=" ">--</option>
+            <option value="L" name="L">Laki-Laki</option>
+            <option value="P" name="P">Perempuan</option>
           </select>
           <div *ngIf="jeniskelamin.touched && jeniskelamin.setValue('--') && jeniskelamin.invalid" class="alert alert-danger">
             Jenis Kelamin harus diisi
@@ -65,19 +66,19 @@
         </div>
     </div>
     <div class="form-group">
-      <label for="username">Username</label>
+      <label for="username">Asal Sekolah</label>
       <input
-        formControlName="username"
+        formControlName="alamatsekolah"
         id="username"
         type="text"
         class="form-control">
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
-            Username harus diisi
+            Asal Sekolah harus diisi
           </div>
     </div>
 
     <div class="form-group">
-      <label for="password">Password</label>
+      <label for="password">Jenis Lomba</label>
       <input
         formControlName="password"
         id="password"

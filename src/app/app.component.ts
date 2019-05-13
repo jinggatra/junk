@@ -1,4 +1,3 @@
-import { TableService } from './table.service';
 import {Component } from '@angular/core';
 
 @Component({
