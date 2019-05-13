@@ -3,7 +3,7 @@
 </div>
 
 <div class="container">
-  <form [formGroup]="form">
+  <form [formGroup]="form" method="POST" form-action="">
     <div class="form-group">
       <label for="nama">Nama Lengkap</label>
       <input
@@ -68,7 +68,7 @@
     <div class="form-group">
       <label for="username">Asal Sekolah</label>
       <input
-        formControlName="alamatsekolah"
+        formControlName="username"
         id="username"
         type="text"
         class="form-control">
