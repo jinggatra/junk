@@ -1,0 +1,93 @@
+<div class="container">
+  <h1 align="center">Ujian Tengah Semester</h1>
+</div>
+
+<div class="container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="nama">Nama</label>
+      <input
+        formControlName="nama"
+        id="nama"
+        type="text"
+        class="form-control">
+        <div *ngIf="nama.touched && nama.invalid" class="alert alert-danger">
+          Nama harus diisi
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="alamat">Alamat</label>
+      <input
+        formControlName="alamat"
+        id="alamat"
+        type="text"
+        class="form-control">
+        <div *ngIf="alamat.touched && alamat.invalid" class="alert alert-danger">
+            Alamat harus diisi
+          </div>
+    </div>
+    <div class="form-group">
+      <label for="tanggallahir">Tanggal Lahir</label>
+      <input
+        formControlName="tanggallahir"
+        id="tanggallahir"
+        type="date"
+        class="form-control">
+        <div *ngIf="tanggallahir.touched && tanggallahir.invalid" class="alert alert-danger">
+            Tanggal lahir harus diisi
+          </div>
+    </div>
+
+    <!-- khusus jenis kelamin-->
+    <div class="form-group">
+        <label for="jeniskelamin">Jenis Kelamin</label><br>
+        <select>
+            <option value="">--</option>
+            <option value="L">Laki-Laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+          <div *ngIf="jeniskelamin.touched && jeniskelamin.setValue('--') && jeniskelamin.invalid" class="alert alert-danger">
+            Jenis Kelamin harus diisi
+          </div>
+      </div>
+
+    <div class="form-group">
+      <label for="nohp">No. Telp</label>
+      <input
+        formControlName="nohp"
+        id="nohp"
+        type="text"
+        class="form-control">
+        <div *ngIf="nohp.touched && nohp.invalid" class="alert alert-danger">
+            No. Telp harus diisi</div>
+        <div *ngIf="nohp.errors.cannotContainChara" class="alert alert-danger">
+          Harus mengisi pakai angka
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        formControlName="username"
+        id="username"
+        type="text"
+        class="form-control">
+        <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+            Username harus diisi
+          </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        formControlName="password"
+        id="password"
+        type="password"
+        class="form-control">
+        <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+            Password harus diisi
+          </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
